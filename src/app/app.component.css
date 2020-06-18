@@ -1,0 +1,12 @@
+app-root {
+    margin: 10px;
+
+
+
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}

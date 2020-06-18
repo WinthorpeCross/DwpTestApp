@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dwp-test-app"
+    }
+  },
+  "defaultProject": "dwp-test-app",
+  "cli": {
+    "analytics": false
+  }
 }
