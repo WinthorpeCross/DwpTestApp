@@ -12,15 +12,9 @@ describe('HttpService', () => {
   let httpTestingController: HttpTestingController;
 
 
-  // beforeEach(() => {
-  //   TestBed.configureTestingModule({});
-  //   service = TestBed.inject(HttpService);
-  // });
   beforeEach(() => {
     TestBed.configureTestingModule({
-      // Import the HttpClient mocking services
       imports: [HttpClientTestingModule],
-      // Provide the service-under-test and its dependencies
       providers: [
         HttpService,
       ]
@@ -31,7 +25,7 @@ describe('HttpService', () => {
   });
 
   afterEach(() => {
-    // After every test, assert that there are no more pending requests.
+
     httpTestingController.verify();
   });
 
@@ -72,11 +66,10 @@ describe('HttpService', () => {
         fail
       );
 
-      // TweetService should have made one request to GET heroes from expected URL
       const req = httpTestingController.expectOne(`https://cors-anywhere.herokuapp.com/https://bpdts-test-app.herokuapp.com/users`);
       expect(req.request.method).toEqual('GET');
 
-      // Respond with the mock tweet
+      // Respond with the mock 
       req.flush(expectedResponse);
     });
   });
@@ -112,11 +105,9 @@ describe('HttpService', () => {
         fail
       );
 
-      // TweetService should have made one request to GET heroes from expected URL
       const req = httpTestingController.expectOne(`https://cors-anywhere.herokuapp.com/https://bpdts-test-app.herokuapp.com/city/London/users`);
       expect(req.request.method).toEqual('GET');
 
-      // Respond with the mock tweet
       req.flush(expectedResponse);
     });
   });

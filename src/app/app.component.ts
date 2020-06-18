@@ -16,8 +16,6 @@ export class AppComponent {
 
   constructor(private geolocationService: GeolocationService, private httpService: HttpService) { }
 
-  // ngOnInit() { }
-
   getUsersByLocation(searchCriterion: string): void {
     this.loading = true;
 
